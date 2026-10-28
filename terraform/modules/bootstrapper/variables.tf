@@ -3,16 +3,15 @@ variable "state_file_bucket_name" {
   type        = string
 }
 
+variable "state_file_aws_region" {
+  description = "(Required) Region of the S3 bucket to store the state file"
+  type        = string
+}
+
 variable "state_file_bucket_key" {
   description = "(Required) Key of the S3 bucket to store the state file"
   type        = string
   default     = "terraform-state"
-}
-
-variable "state_file_aws_region" {
-  description = "(Required) Region of the S3 bucket to store the state file"
-  type        = string
-  default     = "eu-west-2"
 }
 
 variable "state_file_profile_name" {

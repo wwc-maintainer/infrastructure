@@ -86,19 +86,19 @@ jobs:
     #       role-to-assume: ${{ secrets.AWS_IAM_ROLE_PLAN }}
     #       aws-region: ${{ vars.AWS_REGION }}
 
-    #   - name: Initialise
-    #     env:
-    #       GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
-    #     run: terraform init -input=false -no-color
-    #     working-directory: ${{ env.WORKING_DIRECTORY }}
+      - name: Initialise
+        env:
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
+        run: terraform init -input=false -no-color
+        working-directory: ${{ env.WORKING_DIRECTORY }}
 
-    #   - name: Prettify
-    #     run: terraform fmt -check -no-color
-    #     working-directory: ${{ env.WORKING_DIRECTORY }}
+      - name: Prettify
+        run: terraform fmt -check -no-color
+        working-directory: ${{ env.WORKING_DIRECTORY }}
 
-    #   - name: Validate
-    #     run: terraform validate -no-color
-    #     working-directory: ${{ env.WORKING_DIRECTORY }}
+      - name: Validate
+        run: terraform validate -no-color
+        working-directory: ${{ env.WORKING_DIRECTORY }}
 
     #   - name: Plan
     #     run: terraform plan -input=false -no-color
